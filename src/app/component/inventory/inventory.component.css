@@ -1,0 +1,44 @@
+.inventory-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-stock, .current-inventory, .edit-stock {
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  grid-gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+}
+
+.delete-btn, .edit-btn {
+  margin-left: 5px;
+  padding: 2px 8px;
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+
+.edit-btn {
+  background-color: green;
+}
+.font{
+  font-size:28px;
+}
+.fontsize{
+  font-size:24px;
+}
+.background-container{
+  background-color: rgb(236, 192, 192);
+  padding:15px;
+}

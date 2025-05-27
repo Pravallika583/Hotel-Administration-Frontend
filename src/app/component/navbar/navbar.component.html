@@ -1,0 +1,65 @@
+<nav class="navbar-light bg-dark">
+  <!-- Navbar content -->
+  <div
+    class="container-fluid d-flex flex-row justify-content-start align-items-center"
+  >
+    <a class="navbar-brand" routerLink="/">
+      <img
+        src="https://png.pngtree.com/png-clipart/20211116/original/pngtree-hotel-online-booking-concept-illustration-navigation-travel-png-image_6939844.png"
+        style="width: 150px; height: 90px"
+        class="ml-3"
+      />
+    </a>
+    <div class="input-group rounded search-bar">
+      <input
+        type="search"
+        class="form-control rounded m-2 p-3 search"
+        placeholder="Search for Rooms"
+        aria-label="Search"
+        aria-describedby="search-addon"
+      />
+      
+    </div>
+    <div class="d-flex flex-row align-items-center justify-content-end">
+      <button
+        class="btn-danger rounded button m-3 p-2"
+        routerLink="/add"
+        *ngIf="isAdmin"
+        (click)="create()"
+      >
+        create
+      </button>
+      <button
+      class="btn-danger rounded button m-3 p-2"
+      routerLink="/add"
+      *ngIf="isAdmin"
+      (click)="inventory()"
+    >
+      inventory
+    </button>
+      <button
+        class="btn-danger rounded button m-3 p-2"
+        routerLink="/login"
+        (click)="signin()"
+        *ngIf="!isLoggedIn"
+      >
+        Sign In
+      </button>
+      <button class="btn-danger rounded m-3 p-2" *ngIf="isLoggedIn && isAdmin" 
+         aria-current="page" routerLink="/bookings" (click)="Bookings()">Bookings
+      </button>
+      <button class="btn-danger rounded m-3 p-2" *ngIf="isLoggedIn && !isAdmin" 
+      aria-current="page" routerLink="/bookings" (click)="history()">History
+   </button>
+      <button
+        class="btn-danger rounded button"
+        routerLink="/login"
+        (click)="signout()"
+        *ngIf="isLoggedIn"
+      >
+        Sign Out
+      </button>
+    </div>
+  </div>
+</nav>
+<!-- <div class="m-5"></div> -->

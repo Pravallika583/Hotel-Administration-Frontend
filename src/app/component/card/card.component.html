@@ -1,0 +1,19 @@
+<div class="card">
+  <a href="" routerLink="/room-booking/{{ newRoom.id }}" class="rounded">
+    <img style="width:316px; height:200px" class="image" src="{{ newRoom.img }}" alt="Card image "
+  /></a>
+  <div>
+    <h3>
+      {{ newRoom.roomname }}
+    </h3>
+    <p class="my-2">{{ newRoom.roomtype }}</p>
+    <h4 class="my-2" *ngIf="!isAdmin">$ {{ newRoom.price }}</h4>
+    <a class="btn btn-success mx-2" (click)="edit(newRoom.id)" *ngIf="isAdmin"
+      >Edit</a
+    >
+
+    <a class="btn btn-danger" (click)="delete(newRoom.id)" *ngIf="isAdmin"
+      >Delete</a
+    >
+  </div>
+</div>

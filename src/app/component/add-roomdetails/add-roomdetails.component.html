@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="container my-4">
+  <form (ngSubmit)="!roomForm.invalid && addRoom()" #roomForm="ngForm">
+    <div class="alert alert-danger" role="alert" *ngIf="!image.valid">
+      Image URL is required.
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="!name.valid">
+      RoomName is required.
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        name="imageurl"
+        #image="ngModel"
+        [(ngModel)]="newModel.img"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Room Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="newModel.roomname"
+        required
+      />
+    </div>
+    <div class="mb-3"></div>
+    <div class="mb-3"></div>
+    <div class="mb-3">
+      <label class="form-label">RoomType</label>
+      <select
+        name="roomtype"
+        class="form-control"
+        [(ngModel)]="newModel.roomtype"
+      >
+        <option value="Suite">Suite</option>
+        <option value="Deluxe">Deluxe</option>
+        <option value="Executive Suite">Executive Suite</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        name="price"
+        #image="ngModel"
+        [(ngModel)]="newModel.price"
+        required
+      />
+      </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!roomForm.valid">
+      Add Room
+    </button>
+  </form>
+</div>
+

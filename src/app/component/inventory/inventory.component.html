@@ -1,0 +1,44 @@
+<div class="inventory-container">
+  <h2 class="text-center mt-3 mb-3">Inventory Management</h2>
+  
+  <div class="add-stock background-container">
+    <p class="font">Add Stock</p>
+    <form (ngSubmit)="addStock()" #addStockForm="ngForm">
+      <label class="form-label font-size" for="itemname">Item Name:</label>
+      <input class= "form-control" type="text" id="itemname" name="itemname" [(ngModel)]="newStock.itemname" required>
+      
+      <label class="form-label fonr-size" for="quantity">Quantity:</label>
+      <input class="form-control" type="number" id="quantity" name="quantity" [(ngModel)]="newStock.quantity" required>
+      <div>
+      <button class="btn-danger btn my-2" type="submit">Add</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="current-inventory background-container" *ngIf="inventory">
+    <p class="font">Current Inventory</p>
+    <ul>
+      <li *ngFor="let item of inventory">
+        <span class="m-4 font-size">{{ item.itemname }}</span> - <span>{{ item.quantity }}</span>
+        <button class="btn btn-success m-2" (click)="editStockItem(item)">Edit</button>
+        <button class="btn btn-danger m-2" (click)="deleteStock(item.stockid)">Delete</button>  
+      </li>
+    </ul>
+  </div>
+
+  
+  <div class="edit-stock background-container" *ngIf="editStock">
+    <p class="font" >Edit Stock</p>
+    <form (submit)="saveStock()">
+      <label class="form-label" for="editItemName">Item Name:</label>
+      <input class="form-control" type="text" id="editItemName" name="editItemName" [(ngModel)]="editStock.itemname" required>
+      
+      <label class="form-label" for="editQuantity">Quantity:</label>
+      <input class="form-control" type="number" id="editQuantity" name="editQuantity" [(ngModel)]="editStock.quantity" required>
+      <div>
+      <button class="btn btn-danger m-2" type="submit">Save</button>
+      <button class="btn btn-danger m-2" type="button" (click)="editStock = null">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

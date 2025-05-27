@@ -1,0 +1,74 @@
+<app-navbar></app-navbar>
+<app-notification></app-notification>
+<div class="container my-4">
+  <h1 class="mb-3">Room Booking</h1>
+  <form (ngSubmit)="!roomForm.invalid && payment()" #roomForm="ngForm">
+    <div class="alert alert-danger" role="alert" *ngIf="!noOfrooms.valid">
+      No Of Rooms is required.
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Room Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="roomname"
+        #roomname="ngModel"
+        [disabled]="true"
+        [(ngModel)]="roombooking.roomname"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">NoOfRooms</label>
+      <input
+        type="text"
+        class="form-control"
+        name="noofrooms"
+        #noOfrooms="ngModel"
+        required
+        [(ngModel)]="roombooking.noOfRooms"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        name="price"
+        #price="ngModel"
+        [disabled]="true"
+        [(ngModel)]="roombooking.price"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Timings</label>
+      <select
+        name="timings"
+        class="form-control"
+        [(ngModel)]="roombooking.timings"
+      >
+        <option value="9.00 AM - 12.00 PM">9.00 AM - 12.00 PM</option>
+        <option value="2.00 PM - 5.00 PM">2.00 PM - 5.00 PM</option>
+        <option value="6.00 PM - 9.00 PM">6.00 PM - 9.00 PM</option>
+        <option value="9.00 PM - 12.00 PM">9.00 PM - 12.00 PM</option>
+      </select>
+    </div>
+    <h1>Total Amount: {{ roombooking.price * roombooking.noOfRooms }}</h1>
+    <button
+      type="submit"
+      class="btn btn-primary mx-3"
+      [disabled]="!roomForm.valid"
+      (click)="addbooking()"
+    >
+      Add Booking
+    </button>
+    <!-- <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!roomForm.valid"
+      routerLink="/payment"
+    >
+      Payment
+    </button> -->
+  </form>
+</div>

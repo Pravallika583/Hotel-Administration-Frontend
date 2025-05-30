@@ -1,6 +1,6 @@
 # 🏨 Hotel Administration Frontend
 
-This is the frontend of the **Hotel Administration System**, built using **Angular**. It provides a responsive dashboard interface for managing hotel bookings, staff, and inventory operations.
+This is the frontend of the **Hotel Administration System**, built using **Angular**. It provides a responsive dashboard interface for managing hotel bookings.
 
 ---
 
@@ -25,7 +25,7 @@ This is the frontend of the **Hotel Administration System**, built using **Angul
 
 - Responsive admin dashboard
 - Room availability management UI
-- Staff and inventory components
+- inventory components
 - Secure login & session handling
 - Real-time interaction with backend APIs
 

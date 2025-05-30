@@ -1,27 +1,50 @@
-# NewProject
+# 🏨 Hotel Administration Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+This is the frontend of the **Hotel Administration System**, built using **Angular**. It provides a responsive dashboard interface for managing hotel bookings, staff, and inventory operations.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🔗 Backend Repository
 
-## Code scaffolding
+👉 [Hotel Administration Backend (Spring Boot)](https://github.com/Pravallika583/Hotel-Administration-Backend)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular
+- TypeScript
+- HTML5 / CSS3 / Bootstrap
+- Angular Forms / Services
+- Angular Routing
+- HTTP Client for API integration
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🚀 Features
 
-## Running end-to-end tests
+- Responsive admin dashboard
+- Room availability management UI
+- Staff and inventory components
+- Secure login & session handling
+- Real-time interaction with backend APIs
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 📦 Getting Started
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 1. Clone the repo:
+```bash
+git clone https://github.com/Pravallika583/Hotel-Administration-Frontend.git
+cd Hotel-Administration-Frontend
+```
+
+### 2. Install dependencies:
+```bash
+npm install
+```
+### 3. Run the development server:
+```bash
+ng serve
+```
+The app will run at http://localhost:4200/
